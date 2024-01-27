@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const teamController_1 = require("../controllers/teamController");
 const teamRouter = express_1.default.Router();
-teamRouter.get("/", (req, res) => {
-    res.send("<h1>This will return all team</h1>");
-});
+teamRouter.get("/", teamController_1.get);
+teamRouter.post("/", teamController_1.post);
 exports.default = teamRouter;

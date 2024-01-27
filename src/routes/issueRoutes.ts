@@ -1,9 +1,9 @@
 import express from "express";
+import { get, post } from "../controllers/issueController";
 
 const issueRouter = express.Router();
 
-issueRouter.get("/", (req, res) => {
-  res.send("<h1>This will return all issue</h1>");
-});
+issueRouter.get("/", get);
+issueRouter.post("/", post);
 
 export default issueRouter;

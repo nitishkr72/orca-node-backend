@@ -1,9 +1,9 @@
 import express from "express";
+import { get, post } from "../controllers/teamController";
 
 const teamRouter = express.Router();
 
-teamRouter.get("/", (req, res) => {
-  res.send("<h1>This will return all team</h1>");
-});
+teamRouter.get("/", get);
+teamRouter.post("/", post);
 
 export default teamRouter;
