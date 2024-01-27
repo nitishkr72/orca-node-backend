@@ -1,5 +1,5 @@
 import express from "express";
-import { Employee } from "../models/employee";
+import { Employee } from "../models/employeeModel";
 import { connectDb } from "../utils/db";
 
 const employeeRouter = express.Router();
