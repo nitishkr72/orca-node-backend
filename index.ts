@@ -4,10 +4,13 @@ import issueRouter from "./src/routes/issueRoutes";
 import teamRouter from "./src/routes/teamRoutes";
 import projectRouter from "./src/routes/projectRoutes";
 import { connectDb } from "./src/utils/db";
+import bodyParser from "body-parser";
 
 const app = express();
 
 connectDb();
+
+app.use(bodyParser.json());
 
 app.use("/emp", employeeRouter);
 app.use("/project", projectRouter);
