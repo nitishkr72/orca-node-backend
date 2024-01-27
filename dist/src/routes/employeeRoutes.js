@@ -13,12 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const employee_1 = require("../models/employee");
-const db_1 = require("../utils/db");
+const employeeModel_1 = require("../models/employeeModel");
 const employeeRouter = express_1.default.Router();
-(0, db_1.connectDb)();
 employeeRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const emp = yield employee_1.Employee.find();
+    const emp = yield employeeModel_1.Employee.find();
     res.json(JSON.stringify(emp));
 }));
 exports.default = employeeRouter;
