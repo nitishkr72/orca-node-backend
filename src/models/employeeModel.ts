@@ -9,6 +9,9 @@ const employee_schema = new Schema({
     type: String,
     required: true,
   },
+  hash_pass: {
+    type: String,
+  },
   employee_id: {
     type: String,
   },
@@ -16,7 +19,11 @@ const employee_schema = new Schema({
     type: String,
     required: true,
   },
+  created_on: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-export const Employee =
+export const Employee: mongoose.Model<any, {}, {}, {}, any, any> =
   mongoose.models.employee || mongoose.model("employee", employee_schema);
